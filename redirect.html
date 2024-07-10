@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Function to get the value of a query parameter by name
+      function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      // Main function to handle the redirection
+      function redirectToDestination() {
+        const dest = getQueryParam("dest");
+
+        if (dest) {
+          // Redirect to the URL specified in the 'dest' parameter
+          window.location.href = dest;
+        } else {
+          console.error('No destination URL found in the "dest" parameter.');
+        }
+      }
+
+      // Call the main function
+      redirectToDestination();
+    </script>
+  </body>
+</html>
